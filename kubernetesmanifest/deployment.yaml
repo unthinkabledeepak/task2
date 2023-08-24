@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: deepakc826/task2:latest
+      - image: deepakc826/task2:2
         name: flaskdemo
         resources: {}
 status: {}
