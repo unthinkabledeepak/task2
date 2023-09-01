@@ -36,3 +36,25 @@ spec:
     targetPort: 5000
   selector:
     app: flaskdemo
+---
+# aadded later
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flaskdemo
+  labels:
+    name: flaskdemo
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: todo.task2.devopshub.tech
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: flaskdemo
+            port: 
+              number: 8000
+
