@@ -42,10 +42,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: flaskdemo
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+    kubernetes.io/ingress.class: "nginx"
   labels:
     name: flaskdemo
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - flask.task3.devopshub.tech
+    secretName: echo-tls
   rules:
   - host: flask.task3.devopshub.tech
     http:
