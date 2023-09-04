@@ -63,5 +63,5 @@ spec:
           service:
             name: flaskdemo
             port: 
-              number: 8000
+              number: 80
 
